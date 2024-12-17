@@ -1,0 +1,19 @@
+<div class="task-form">
+    <form id="taskForm" action="/tasks" method="POST">
+        <input id="description" type="text" name="description" placeholder="Enter a new task..." required/>
+        <button type="submit">Add Task</button>
+    </form>
+</div>
+
+{{#if tasks.length}}
+    <ul class="task-list">
+        {{#each tasks}}
+            <li>{{description}}</li>
+        {{/each}}
+    </ul>
+{{else}}
+    <p>No tasks yet. Add one above!</p>
+{{/if}}
+
+<!-- Kliendipoolne JavaScript -->
+<script src="/client.js"></script>
